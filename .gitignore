@@ -1,0 +1,17 @@
+# segredos
+.env
+
+# dados de producao extraidos (amostras, resultados, orcamento)
+dados/
+*.jsonl
+*.dump
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/

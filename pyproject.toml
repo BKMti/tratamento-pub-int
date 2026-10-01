@@ -1,0 +1,35 @@
+[project]
+name = "tratamento-pub-int"
+version = "0.1.0"
+description = "Experimento: classificação de publicações e intimações judiciais com DeepSeek segundo o POP da Controladoria"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.50",
+    "python-dotenv>=1.0",
+    "psycopg[binary]>=3.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tratamento_pub_int"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
